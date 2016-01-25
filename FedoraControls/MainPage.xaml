@@ -2,40 +2,68 @@
     x:Class="FedoraControls.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FedoraControls"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:FedoraControls.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:FedoraControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView x:Name="myItems" HorizontalContentAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <controls:SwipeActionItem Height="125" VerticalAlignment="Center" HorizontalAlignment="Stretch" LeftDescription="Archive" 
-                               RightDescription="Favorite" RightBackground="#FFF3BD27" LeftBackground="#FF629632" RightContentForeground="White" LeftContentForeground="White"
-                               RightAnimationType="SlideFromInside" LeftAnimationType="RotateFromInside" HorizontalContentAlignment="Stretch">
+                    <controls:SwipeActionItem
+                        Height="125"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Stretch"
+                        LeftAnimationType="RotateFromInside"
+                        LeftBackground="#FF629632"
+                        LeftContentForeground="White"
+                        LeftDescription="Archive"
+                        RightAnimationType="SlideFromInside"
+                        RightBackground="#FFF3BD27"
+                        RightContentForeground="White"
+                        RightDescription="Favorite">
                         <Grid Background="White">
                             <StackPanel Margin="0,20">
-                                <Border Background="LightGray" Height="10" Margin="10,5" />
-                                <Border Background="LightGray" Height="10" Margin="10,5,50,5"/>
-                                <Border Background="LightGray" Height="10" Margin="10,5,50,5"/>
-                                <Border Background="LightGray" Height="10" Margin="10,5,50,5"/>
+                                <Border
+                                    Height="10"
+                                    Margin="10,5"
+                                    Background="LightGray" />
+                                <Border
+                                    Height="10"
+                                    Margin="10,5,50,5"
+                                    Background="LightGray" />
+                                <Border
+                                    Height="10"
+                                    Margin="10,5,50,5"
+                                    Background="LightGray" />
+                                <Border
+                                    Height="10"
+                                    Margin="10,5,50,5"
+                                    Background="LightGray" />
                             </StackPanel>
                         </Grid>
                         <controls:SwipeActionItem.LeftContent>
                             <Grid Padding="10">
-                                <Path Width="50" Height="50" Stretch="Uniform"
-                          Fill="White" 
-                          Data="F1 M 84.640,28.951 L 15.360,28.951 L 15.360,15.528 L 84.640,15.528 L 84.640,28.951 Z M 80.816,84.808 L 19.184,84.808 L 19.184,32.529 L 80.816,32.529 L 80.816,84.808 Z M 88.104,12.064 L 11.896,12.064 L 11.896,32.415 L 15.720,32.415 L 15.720,88.272 L 84.280,88.272 L 84.280,32.415 L 88.104,32.415 L 88.104,12.064 Z M 38.652,42.518 C 37.967,42.518 37.409,43.076 37.409,43.761 L 37.409,45.460 C 37.409,46.146 37.967,46.705 38.652,46.705 L 61.348,46.705 C 62.033,46.705 62.591,46.146 62.591,45.460 L 62.591,43.761 C 62.591,43.076 62.033,42.518 61.348,42.518 L 38.652,42.518 Z M 61.348,50.169 L 38.652,50.169 C 36.056,50.169 33.945,48.056 33.945,45.460 L 33.945,43.761 C 33.945,41.165 36.056,39.054 38.652,39.054 L 61.348,39.054 C 63.944,39.054 66.055,41.165 66.055,43.761 L 66.055,45.460 C 66.055,48.056 63.944,50.169 61.348,50.169 Z"/>
+                                <Path
+                                    Width="50"
+                                    Height="50"
+                                    Fill="White"
+                                    Data="F1 M 84.640,28.951 L 15.360,28.951 L 15.360,15.528 L 84.640,15.528 L 84.640,28.951 Z M 80.816,84.808 L 19.184,84.808 L 19.184,32.529 L 80.816,32.529 L 80.816,84.808 Z M 88.104,12.064 L 11.896,12.064 L 11.896,32.415 L 15.720,32.415 L 15.720,88.272 L 84.280,88.272 L 84.280,32.415 L 88.104,32.415 L 88.104,12.064 Z M 38.652,42.518 C 37.967,42.518 37.409,43.076 37.409,43.761 L 37.409,45.460 C 37.409,46.146 37.967,46.705 38.652,46.705 L 61.348,46.705 C 62.033,46.705 62.591,46.146 62.591,45.460 L 62.591,43.761 C 62.591,43.076 62.033,42.518 61.348,42.518 L 38.652,42.518 Z M 61.348,50.169 L 38.652,50.169 C 36.056,50.169 33.945,48.056 33.945,45.460 L 33.945,43.761 C 33.945,41.165 36.056,39.054 38.652,39.054 L 61.348,39.054 C 63.944,39.054 66.055,41.165 66.055,43.761 L 66.055,45.460 C 66.055,48.056 63.944,50.169 61.348,50.169 Z"
+                                    Stretch="Uniform" />
 
                             </Grid>
                         </controls:SwipeActionItem.LeftContent>
                         <controls:SwipeActionItem.RightContent>
                             <Grid Padding="10">
-                                <Path Width="50" Height="50" Stretch="Uniform" 
-                          Fill="White"
-                          Data="F1 M 56.374,0.000 C 51.298,0.000 46.222,1.936 42.349,5.809 L 38.104,10.055 L 33.859,5.809 C 29.986,1.936 24.910,0.000 19.834,0.000 C 14.758,0.000 9.682,1.936 5.809,5.809 C -1.936,13.555 -1.936,26.113 5.809,33.859 L 10.055,38.104 L 38.104,66.153 L 66.153,38.104 L 70.399,33.859 C 78.144,26.113 78.144,13.555 70.399,5.809 C 66.526,1.936 61.450,0.000 56.374,0.000 L 56.374,0.000 Z M 56.374,3.497 C 60.738,3.497 64.840,5.196 67.926,8.282 C 74.296,14.652 74.296,25.016 67.926,31.386 L 63.681,35.631 L 38.104,61.208 L 12.527,35.631 L 8.282,31.386 C 1.912,25.016 1.912,14.652 8.282,8.282 C 11.368,5.196 15.470,3.497 19.834,3.497 C 24.198,3.497 28.300,5.196 31.386,8.282 L 35.631,12.527 L 38.104,15.000 L 40.577,12.527 L 44.822,8.282 C 47.908,5.196 52.010,3.497 56.374,3.497"/>
+                                <Path
+                                    Width="50"
+                                    Height="50"
+                                    Fill="White"
+                                    Data="F1 M 56.374,0.000 C 51.298,0.000 46.222,1.936 42.349,5.809 L 38.104,10.055 L 33.859,5.809 C 29.986,1.936 24.910,0.000 19.834,0.000 C 14.758,0.000 9.682,1.936 5.809,5.809 C -1.936,13.555 -1.936,26.113 5.809,33.859 L 10.055,38.104 L 38.104,66.153 L 66.153,38.104 L 70.399,33.859 C 78.144,26.113 78.144,13.555 70.399,5.809 C 66.526,1.936 61.450,0.000 56.374,0.000 L 56.374,0.000 Z M 56.374,3.497 C 60.738,3.497 64.840,5.196 67.926,8.282 C 74.296,14.652 74.296,25.016 67.926,31.386 L 63.681,35.631 L 38.104,61.208 L 12.527,35.631 L 8.282,31.386 C 1.912,25.016 1.912,14.652 8.282,8.282 C 11.368,5.196 15.470,3.497 19.834,3.497 C 24.198,3.497 28.300,5.196 31.386,8.282 L 35.631,12.527 L 38.104,15.000 L 40.577,12.527 L 44.822,8.282 C 47.908,5.196 52.010,3.497 56.374,3.497"
+                                    Stretch="Uniform" />
                             </Grid>
                         </controls:SwipeActionItem.RightContent>
                     </controls:SwipeActionItem>

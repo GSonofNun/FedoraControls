@@ -1,48 +1,87 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FedoraControls"
-    xmlns:controls="using:FedoraControls.Controls">
+    xmlns:controls="using:FedoraControls.Controls"
+    xmlns:local="using:FedoraControls">
 
-    <Style TargetType="controls:SwipeActionItem" >
+    <Style TargetType="controls:SwipeActionItem">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SwipeActionItem">
-                    <Border x:Name="AllEncompassingContainer"
+                    <Border
+                        x:Name="AllEncompassingContainer"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid>
-                            
-                            <Grid x:Name="RightContainer" Background="{TemplateBinding RightBackground}" Opacity="0">
-                                <Grid x:Name="RightContentContainer" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,5,20,-5">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <ContentPresenter x:Name="RightContent" Content="{TemplateBinding RightContent}" Foreground="{TemplateBinding RightContentForeground}" HorizontalAlignment="Center" />
-                                    <TextBlock x:Name="RightText" Text="{TemplateBinding RightDescription}" FontSize="12" Foreground="{TemplateBinding RightDescriptionForeground}" FontWeight="Light"
-                                           TextAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
-                                </Grid>
-                                
-                            </Grid>
-                            
-                            <Grid x:Name="LeftContainer" Background="{TemplateBinding LeftBackground}" Opacity="0">
 
-                                <Grid x:Name="LeftContentContainer" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,5,20,-5">
+                            <Grid
+                                x:Name="RightContainer"
+                                Background="{TemplateBinding RightBackground}"
+                                Opacity="0">
+                                <Grid
+                                    x:Name="RightContentContainer"
+                                    Grid.Row="0"
+                                    Margin="20,5,20,-5"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
-                                    <ContentPresenter x:Name="LeftContent" Content="{TemplateBinding LeftContent}" Foreground="{TemplateBinding LeftContentForeground}" HorizontalAlignment="Center" />
-                                    <TextBlock x:Name="LeftText" Text="{TemplateBinding LeftDescription}" FontSize="12" Foreground="{TemplateBinding LeftDescriptionForeground}" FontWeight="Light"
-                                           HorizontalAlignment="Center" TextAlignment="Center" Grid.Row="1"/>
+                                    <ContentPresenter
+                                        x:Name="RightContent"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{TemplateBinding RightContentForeground}"
+                                        Content="{TemplateBinding RightContent}" />
+                                    <TextBlock
+                                        x:Name="RightText"
+                                        Grid.Row="1"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{TemplateBinding RightDescriptionForeground}"
+                                        FontSize="12"
+                                        FontWeight="Light"
+                                        Text="{TemplateBinding RightDescription}"
+                                        TextAlignment="Center" />
                                 </Grid>
-                                
+
+                            </Grid>
+
+                            <Grid
+                                x:Name="LeftContainer"
+                                Background="{TemplateBinding LeftBackground}"
+                                Opacity="0">
+
+                                <Grid
+                                    x:Name="LeftContentContainer"
+                                    Grid.Row="1"
+                                    Margin="20,5,20,-5"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <ContentPresenter
+                                        x:Name="LeftContent"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{TemplateBinding LeftContentForeground}"
+                                        Content="{TemplateBinding LeftContent}" />
+                                    <TextBlock
+                                        x:Name="LeftText"
+                                        Grid.Row="1"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{TemplateBinding LeftDescriptionForeground}"
+                                        FontSize="12"
+                                        FontWeight="Light"
+                                        Text="{TemplateBinding LeftDescription}"
+                                        TextAlignment="Center" />
+                                </Grid>
+
                             </Grid>
 
                             <Grid x:Name="ContentContainer" ManipulationMode="System, TranslateX">
-                                <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}"/>
+                                <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" />
                             </Grid>
                         </Grid>
                     </Border>

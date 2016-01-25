@@ -20,8 +20,27 @@ using Windows.UI.Xaml.Media;
 
 namespace FedoraControls.Controls
 {
+    [TemplatePart(Name = _rightContent, Type = typeof(ContentPresenter))]
+    [TemplatePart(Name = _leftContent, Type = typeof(ContentPresenter))]
+    [TemplatePart(Name = _leftTextBlock, Type = typeof(TextBlock))]
+    [TemplatePart(Name = _rightTextBlock, Type = typeof(TextBlock))]
+    [TemplatePart(Name = _leftContentContainer, Type = typeof(Grid))]
+    [TemplatePart(Name = _rightContentContainer, Type = typeof(Grid))]
+    [TemplatePart(Name = _leftContainer, Type = typeof(Grid))]
+    [TemplatePart(Name = _rightContainer, Type = typeof(Grid))]
+    [TemplatePart(Name = _contentContainer, Type = typeof(Grid))]
     public sealed class SwipeActionItem : ContentControl
     {
+        private const string _leftContent = "LeftContent";
+        private const string _leftTextBlock = "LeftText";
+        private const string _leftContentContainer = "LeftContentContainer";
+        private const string _leftContainer = "LeftContainer";
+        private const string _rightContent = "RightContent";
+        private const string _rightTextBlock = "RightText";
+        private const string _rightContentContainer = "RightContentContainer";
+        private const string _rightContainer = "RightContainer";
+        private const string _contentContainer = "ContentContainer";
+
         private TextBlock _LeftTextBlock;
         private Grid _LeftContentContainer;
         private Grid _LeftContainer;
@@ -72,15 +91,15 @@ namespace FedoraControls.Controls
         protected override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            _LeftContainer = GetTemplateChild("LeftContainer") as Grid;
-            _LeftContentContainer = GetTemplateChild("LeftContentContainer") as Grid;
-            _LeftTextBlock = GetTemplateChild("LeftText") as TextBlock;
-            _RightContainer = GetTemplateChild("RightContainer") as Grid;
-            _RightContentContainer = GetTemplateChild("RightContentContainer") as Grid;
-            _RightTextBlock = GetTemplateChild("RightText") as TextBlock;
-            _ContentContainer = GetTemplateChild("ContentContainer") as Grid;
-            _RightContent = GetTemplateChild("RightContent") as ContentPresenter;
-            _LeftContent = GetTemplateChild("LeftContent") as ContentPresenter;
+            _LeftContainer = GetTemplateChild(_leftContainer) as Grid;
+            _LeftContentContainer = GetTemplateChild(_leftContentContainer) as Grid;
+            _LeftTextBlock = GetTemplateChild(_leftTextBlock) as TextBlock;
+            _RightContainer = GetTemplateChild(_rightContainer) as Grid;
+            _RightContentContainer = GetTemplateChild(_rightContentContainer) as Grid;
+            _RightTextBlock = GetTemplateChild(_rightTextBlock) as TextBlock;
+            _ContentContainer = GetTemplateChild(_contentContainer) as Grid;
+            _RightContent = GetTemplateChild(_rightContent) as ContentPresenter;
+            _LeftContent = GetTemplateChild(_leftContent) as ContentPresenter;
 
             WireAnimations();
             WireManipulation();
