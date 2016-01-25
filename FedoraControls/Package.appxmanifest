@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="f510e144-8628-4a70-8da0-9d1cdc285192"
+    Name="b6983088-67d5-4133-9297-f0187634c055"
     Publisher="CN=Joshua Grzybowski"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="f510e144-8628-4a70-8da0-9d1cdc285192" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="b6983088-67d5-4133-9297-f0187634c055" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>TestCompositor</DisplayName>
+    <DisplayName>FedoraControls</DisplayName>
     <PublisherDisplayName>Joshua Grzybowski</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="TestCompositor.App">
+      EntryPoint="FedoraControls.App">
       <uap:VisualElements
-        DisplayName="TestCompositor"
+        DisplayName="FedoraControls"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="TestCompositor"
+        Description="FedoraControls"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
