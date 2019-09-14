@@ -95,11 +95,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PopInControl.cs" />
     <Compile Include="Controls\SwipeActionItem.cs" />
+    <Compile Include="Helpers\BlurHelper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestPopInControlPage.xaml.cs">
+      <DependentUpon>TestPopInControlPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestSwipeItemPage.xaml.cs">
+      <DependentUpon>TestSwipeItemPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -108,6 +116,25 @@
     <None Include="FedoraControls_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ACSyndicate.jpg" />
+    <Content Include="Assets\BatmanAK.jpg" />
+    <Content Include="Assets\Cinema.jpg" />
+    <Content Include="Assets\Cinema_Blurred.jpg" />
+    <Content Include="Assets\ControllerBackground.jpg" />
+    <Content Include="Assets\ControllerBackgroundBlurred.jpg" />
+    <Content Include="Assets\Fallout4.png" />
+    <Content Include="Assets\FarCryPrimal.jpg" />
+    <Content Include="Assets\MovieArt\batman_v_superman_poster.jpg" />
+    <Content Include="Assets\MovieArt\Captain-America-Civil-War-poster.jpg" />
+    <Content Include="Assets\MovieArt\Concussion-Poster.jpg" />
+    <Content Include="Assets\MovieArt\deadpool-ver8-acc2e.jpg" />
+    <Content Include="Assets\MovieArt\finding_dory_poster.jpg" />
+    <Content Include="Assets\MovieArt\the-fifth-wave-poster.jpg" />
+    <Content Include="Assets\MovieArt\The-Finest-Hours-Poster.jpg" />
+    <Content Include="Assets\MovieArt\the-jungle-book-character-poster-2.jpg" />
+    <Content Include="Assets\MovieArt\the_jungle_book_2016_poster.jpg" />
+    <Content Include="Assets\MovieArt\x-men-apocalypse-poster-full.jpg" />
+    <Content Include="Assets\ROTTR.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -126,10 +153,46 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TestPopInControlPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestSwipeItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Downloads\WindowsComposition.FluentExpressions\WindowsComposition.FluentExpressions\WindowsComposition.FluentExpressions\WindowsComposition.FluentExpressions.csproj">
+      <Project>{13839f56-80c4-40dc-acb8-064e461a66db}</Project>
+      <Name>WindowsComposition.FluentExpressions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OMDbSharp\omdbSharp\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="omdbSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OMDbSharp\omdbSharp\bin\Debug\omdbSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OMDbSharp\omdbSharp\bin\Debug\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OMDbSharp\omdbSharp\bin\Debug\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OMDbSharp\omdbSharp\bin\Debug\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

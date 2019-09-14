@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
 using Windows.Foundation;
 using Windows.UI;
 using Windows.UI.Composition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using WindowsComposition.FluentExpressions;
 
 // The Templated Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234235
 
@@ -238,7 +233,13 @@ namespace FedoraControls.Controls
                     //_LeftContentVisual.CenterPoint = new Vector3(0f, 1f, 0.5f);
                     //_LeftContentVisual.AnchorPoint = new Vector2(0f, 1f);
                     _LeftContentVisual.RotationAngle = (float)_BeginRotationAngle;
-                    _LeftContentAnimation = _Compositor.CreateExpressionAnimation("(1 - (o / x)) * y");
+                    ExpressionBase expression = new IntegerExpression(1)
+                        .Subtract(new ReferenceExpression("o").Divide(new ReferenceExpression("x")).Group())
+                        .Group()
+                        .Multiply(new ReferenceExpression("y"));
+                    string expressionSTR = expression.GetExpression();
+                    _LeftContentAnimation = _Compositor.CreateExpressionAnimation(expressionSTR);
+                    //_LeftContentAnimation = _Compositor.CreateExpressionAnimation("(1 - (o / x)) * y");
                     _LeftContentAnimation.SetScalarParameter("o", (float)_OffsetX);
                     _LeftContentAnimation.SetScalarParameter("x", (float)_MaxOffsetX);
                     _LeftContentAnimation.SetScalarParameter("y", (float)_BeginRotationAngle);

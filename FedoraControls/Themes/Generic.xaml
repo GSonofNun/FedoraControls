@@ -89,4 +89,19 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="controls:PopInControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:PopInControl">
+                    <Border x:Name="ContentContainer"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentControl Content="{TemplateBinding Content}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

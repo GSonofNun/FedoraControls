@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="FedoraControls.TestPopInControlPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FedoraControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:FedoraControls.Controls"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:PopInControl x:Name="myContent" Background="Green" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="225" IsOpen="False" />
+        <Button VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Content="Open"
+                Click="Button_Click"/>
+    </Grid>
+</Page>
